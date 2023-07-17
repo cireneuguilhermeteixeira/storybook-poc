@@ -1,9 +1,9 @@
-import { Button } from './Button';
+import { CheckoutButton } from './CheckoutButton';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 export default {
-  title: 'Example/Button',
-  component: Button,
+  title: 'Example/CheckoutButton',
+  component: CheckoutButton,
   tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },

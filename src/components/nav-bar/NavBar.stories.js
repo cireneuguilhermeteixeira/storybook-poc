@@ -1,8 +1,8 @@
-import { Header } from './Header';
+import { NavBar } from './NavBar';
 
 export default {
-  title: 'Example/Header',
-  component: Header,
+  title: 'Example/NavBar',
+  component: NavBar,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {

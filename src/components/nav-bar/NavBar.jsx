@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Button } from '../button/Button';
-import './header.css';
+import { CheckoutButton } from '../checkout-button/CheckoutButton';
+import './nav-bar.css';
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
+export const NavBar = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <header>
     <div className="storybook-header">
       <div>
@@ -32,12 +32,12 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
             <span className="welcome">
               Welcome, <b>{user.name}</b>!
             </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
+            <CheckoutButton size="small" onClick={onLogout} label="Log out" />
           </>
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            <CheckoutButton size="small" onClick={onLogin} label="Log in" />
+            <CheckoutButton primary size="small" onClick={onCreateAccount} label="Sign up" />
           </>
         )}
       </div>
@@ -45,7 +45,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
   </header>
 );
 
-Header.propTypes = {
+NavBar.propTypes = {
   user: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }),
@@ -54,6 +54,6 @@ Header.propTypes = {
   onCreateAccount: PropTypes.func.isRequired,
 };
 
-Header.defaultProps = {
+NavBar.defaultProps = {
   user: null,
 };
