@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+Your task is to develop a Proof of Concept (POC) for a simple e-commerce web application using Storybook 7. This application is broken down into a handful of components that you are expected to build and thoroughly test using Storybook's diverse testing capabilities.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Components to Create
+ProductCard: This component displays the product's image, name, price, and a "Add to Cart" button. Use a static dataset to simulate a collection of products.
 
-## Available Scripts
+Cart: This component shows the products added to the cart. It should display the product name, price, and a button to remove the product from the cart.
 
-In the project directory, you can run:
+CheckoutButton: This button initiates the checkout process.
 
-### `npm start`
+NavBar: This component includes navigation links for "Home", "Cart", "Checkout", and "Logout".
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Tests to Implement
+For each component, you need to write different types of tests as specified below:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Spot Tests
+Create stories for each component, simulating different states. Develop scenarios like an empty cart, a cart with one product, a cart with multiple products, etc.
 
-### `npm test`
+Visual Tests
+Implement visual testing with Storybook's addon to catch any visual regressions. Create baseline images, and for every change, compare the new state with the baseline.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Interaction Tests
+Simulate user behavior for each component. Perform events like clicking the "Add to Cart" button, removing an item from the Cart, navigating through the NavBar, and clicking the CheckoutButton.
 
-### `npm run build`
+Accessibility Tests
+Perform accessibility tests using the @storybook/addon-a11y to ensure that your components meet WCAG standards and are ARIA compatible.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Snapshot Tests
+Implement snapshot testing for the DOM markup of each component to detect any regressions in the DOM structure and content when changes are made.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Reuse Tests
+Reuse your stories across different testing tools like Jest, Mocha, etc., to conduct unit tests, integration tests, and more.
