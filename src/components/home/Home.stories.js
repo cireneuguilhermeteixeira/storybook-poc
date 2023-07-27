@@ -1,4 +1,5 @@
 import { within, userEvent } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
 import { Home } from './Home';
 
@@ -21,5 +22,10 @@ export const LoggedIn = {
       name: /Log in/i,
     });
     await userEvent.click(loginButton);
+    
+    await expect(canvas.getByRole('button', {
+      name: /Log outt/i,
+    })).toBeInTheDocument();
+    
   },
 };

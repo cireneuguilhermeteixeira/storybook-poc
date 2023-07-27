@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import {
   Container, Card, CardHeader, CardContent, Chip,
   TableContainer, Table, TableHead, TableRow, TableBody,
-  TableCell, Button, IconButton, Badge, Input, Grid
+  TableCell, Button, IconButton, Badge, Typography, Grid,
+  TextField,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/AddOutlined';
 import DeleteIcon from '@mui/icons-material/RemoveOutlined';
@@ -32,6 +33,10 @@ const Cart = (props) => {
       console.log(e)
 
     }
+  }
+
+  const calcFrete = () => {
+    console.log(`frete calc`);
   }
 
   const removeProductToCard = async (product) => {
@@ -117,7 +122,7 @@ const Cart = (props) => {
                                   <Grid container>
                                     <Grid item md={2}>
 
-                                      <IconButton onClick={() => removeProductToCard(item)} title="Remover um" color="inherit">
+                                      <IconButton date-testid="remove-button" onClick={() => removeProductToCard(item)} title="Remover um" color="inherit">
                                         <Badge >
                                           <DeleteIcon />
                                         </Badge>
@@ -126,24 +131,23 @@ const Cart = (props) => {
                                     </Grid>
                                     <Grid item md={2}>
 
-                                      <Input
-                                        value={item?.quantity}
-                                        size="small"
-                                        sx={{ textAlign: 'center' }}
-                                        inputProps={{
-                                          step: 10,
-                                          min: 0,
-                                          max: 100,
-                                          type: 'number',
-                                          'aria-labelledby': 'input-slider',
-                                        }}
-                                      />
+                                      <Typography 
+                                      
+                                      date-testid="value"
+                                      style={{
+                                        width: '30px',
+                                        margin: 'auto',
+                                        textAlign: 'center',
+                                        marginTop: '10px'
+                                      }}>
+                                        {item?.quantity}
+                                      </Typography>
+                                      
                                     </Grid>
                                     <Grid item md={2}>
-                                      <IconButton onClick={() => addProductToCard(item)} title='adicionar mais um' color="inherit">
+                                      <IconButton testid="add-button" onClick={() => addProductToCard(item)} title='adicionar mais um' color="inherit">
                                         <Badge >
                                           <AddIcon />
-
                                         </Badge>
                                       </IconButton>
 
@@ -184,14 +188,31 @@ const Cart = (props) => {
                       </Grid>
                     </Grid>
 
-
+                    <br /><br />
                     <Grid container spacing={12}>
+                      <Grid sx={{marginTop: `20px`}} item xs={12} md={4}>
+                        <strong> Digite seu CEP:</strong>
+                      </Grid>
                       <Grid item xs={12} md={8}>
-                        <strong> Taxa de entrega</strong>
+                        <input
+                          style={{ textAlign: 'center', marginBottom: '15px' }}
+                          data-testid="my-cep"
+                          type="text"
+                          placeholder='00.000-000' />
+                        {/* <TextField
+                          placeholder='00.000-000'
+                          data-testid="my-cep"
+                          aria-label='my cep'
+                          sx={{ textAlign: 'center', marginBottom: '15px' }}
+                          
+                        /> */}
+
+                        <Button testid="calc-frete" onClick={() => calcFrete()}  size='medium' variant='outlined'>
+                          Calcular frete
+                        </Button>
                       </Grid>
-                      <Grid item xs={12} md={4}>
-                        R$ ----
-                      </Grid>
+
+                        
                     </Grid>
 
 
