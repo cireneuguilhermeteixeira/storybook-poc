@@ -28,10 +28,27 @@ export const NavBar = ({ user, onLogin, onLogout, onCreateAccount }) => (
       </div>
       <div>
         {user ? (
-          <>
+          <>         
+           
+
+            <span className="welcome">
+              Home
+            </span>
+
+            <span className="welcome">
+              Cart
+            </span>
+
+            <span className="welcome">
+              Checkout
+            </span>
+
+          
+
             <span className="welcome">
               Welcome, <b>{user.name}</b>!
             </span>
+
             <CheckoutButton size="small" onClick={onLogout} label="Log out" />
           </>
         ) : (

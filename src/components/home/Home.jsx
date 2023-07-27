@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Header } from '../nav-bar/NavBar';
+import { NavBar } from '../nav-bar/NavBar';
 import './home.css';
 
 export const Home = () => {
@@ -8,7 +8,7 @@ export const Home = () => {
 
   return (
     <article>
-      <Header
+      <NavBar
         user={user}
         onLogin={() => setUser({ name: 'Jane Doe' })}
         onLogout={() => setUser(undefined)}
