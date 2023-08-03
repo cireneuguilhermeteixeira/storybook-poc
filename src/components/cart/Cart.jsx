@@ -199,16 +199,9 @@ const Cart = (props) => {
                           data-testid="my-cep"
                           type="text"
                           placeholder='00.000-000' />
-                        {/* <TextField
-                          placeholder='00.000-000'
-                          data-testid="my-cep"
-                          aria-label='my cep'
-                          sx={{ textAlign: 'center', marginBottom: '15px' }}
-                          
-                        /> */}
-
-                        <Button testid="calc-frete" onClick={() => calcFrete()}  size='medium' variant='outlined'>
-                          Calcular frete
+                      
+                        <Button testid="calc-frete" onClick={() => calcFrete()}  size='medium' variant='contained'>
+                          Simular frete
                         </Button>
                       </Grid>
 
@@ -238,13 +231,13 @@ const Cart = (props) => {
                       </Grid>
 
                       <Grid item md={12}>
-                        <Button onClick={() => finishPayment()} fullWidth size='large' variant='contained'>
+                        <Button onClick={() => finishPayment()} variant='outlined' fullWidth size='large' >
                           Finalizar compra
                         </Button>
                       </Grid>
 
                       <Grid item md={12}>
-                        <Button onClick={() => window.location.assign('/')} fullWidth size='large' variant='outlined'>
+                        <Button onClick={() => window.location.assign('/')} fullWidth size='large' variant='contained'>
                           Continuar comprando
                         </Button>
                       </Grid>

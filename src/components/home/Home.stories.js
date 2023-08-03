@@ -24,7 +24,7 @@ export const LoggedIn = {
     await userEvent.click(loginButton);
     
     await expect(canvas.getByRole('button', {
-      name: /Log outt/i,
+      name: /Log out/i,
     })).toBeInTheDocument();
     
   },

@@ -73,11 +73,9 @@ export const CartInteraction = {
 
 
     const freteButton = await canvas.getByRole('button', {
-      name: "Calcular frete"
+      name: "Simular frete"
     });
     
-    // console.log(`freteButton`, freteButton);
-
 
     await userEvent.click(freteButton);
     
